@@ -40,7 +40,7 @@ function calcularEdadesFuturas() {
 calcularEdadesFuturas();
 
  
-?>/
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
