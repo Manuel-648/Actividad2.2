@@ -1,26 +1,44 @@
 <?php
 // 1. Directivas de configuración
  
- 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1); 
+
 // Configuración de hora local para la fecha dinámica
  
- 
+ date_default_timezone_set('Europe/Madrid');
  
 // 2. Definición de variables globales (nombre, apellidos, edadActual)
  
- 
+$nombre = "Manuel Jesús";
+$apellidos = "Arenas Ramírez";
+$edadActual = 19; 
+
 // 3. Control de Ámbitos y Funciones PHP
 // Declaramos las variables fuera para inicializarlas en el ámbito global
 //edad10, edad20, edadDoble, todas a 0 de inicio.﻿
  
- 
+$edad10 = 0;
+$edad20 = 0;
+$edadDoble = 0; 
+
 function calcularEdadesFuturas() {
     // Esto es necesario?: Acceso al ámbito global mediante la palabra reservada 'global'
     // Operadores aritméticos (edad10, edad20, edadDoble)
     // establecer los valores correctos
+
+    global $edadActual, $edad10, $edad20, $edadDoble;
+
+    $edad10 = $edadActual + 10;
+    $edad20 = $edadActual + 20;
+    $edadDoble = $edadActual * 2;
 }
  
 // Ejecutamos la función para procesar los cálculos en el servidor
+
+calcularEdadesFuturas();
+
  
 ?>/
 <!DOCTYPE html>
